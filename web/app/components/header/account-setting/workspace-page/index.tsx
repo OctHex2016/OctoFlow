@@ -2,13 +2,13 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useContext } from 'use-context-selector'
+import useSWR from 'swr'
 import { RiDeleteBinLine, RiEditLine } from '@remixicon/react'
 import Button from '@/app/components/base/button'
 import Modal from '@/app/components/base/modal'
 import Input from '@/app/components/base/input'
 import { ToastContext } from '@/app/components/base/toast'
-import { deleteWorkspace, updateWorkspaceInfo } from '@/service/common'
-import { useWorkspacesContext } from '@/context/workspace-context'
+import { deleteWorkspace, updateWorkspaceInfo, fetchWorkspaces } from '@/service/common'
 import { useAppContext } from '@/context/app-context'
 import { basePath } from '@/utils/var'
 import type { IWorkspace } from '@/models/common'
@@ -16,7 +16,8 @@ import type { IWorkspace } from '@/models/common'
 export default function WorkspacePage() {
   const { t } = useTranslation()
   const { notify } = useContext(ToastContext)
-  const { workspaces, mutateWorkspaces } = useWorkspacesContext()
+  const { data, mutate } = useSWR({ url: '/workspaces' }, fetchWorkspaces)
+  const workspaces = data?.workspaces || []
   const { isCurrentWorkspaceManager } = useAppContext()
   const [editingWorkspace, setEditingWorkspace] = useState<IWorkspace | null>(null)
   const [deletingWorkspace, setDeletingWorkspace] = useState<IWorkspace | null>(null)
@@ -39,7 +40,7 @@ export default function WorkspacePage() {
       notify({ type: 'success', message: t('common.actionMsg.modifiedSuccessfully') })
       setEditingWorkspace(null)
       setWorkspaceName('')
-      await mutateWorkspaces()
+      await mutate()
     }
     catch {
       notify({ type: 'error', message: t('common.provider.saveFailed') })
@@ -69,7 +70,7 @@ export default function WorkspacePage() {
         location.assign(`${location.origin}${basePath}`)
       }
       else {
-        await mutateWorkspaces()
+        await mutate()
       }
     }
     catch (error: any) {
@@ -90,6 +91,11 @@ export default function WorkspacePage() {
           </div>
 
           <div className='space-y-3'>
+            {workspaces.length === 0 && (
+              <div className='text-center py-8 text-text-tertiary'>
+                No workspaces found. Loading...
+              </div>
+            )}
             {workspaces.map(workspace => (
               <div 
                 key={workspace.id}

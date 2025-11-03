@@ -7,10 +7,12 @@ import type { IWorkspace } from '@/models/common'
 
 export type WorkspacesContextValue = {
   workspaces: IWorkspace[]
+  mutateWorkspaces: () => void
 }
 
 const WorkspacesContext = createContext<WorkspacesContextValue>({
   workspaces: [],
+  mutateWorkspaces: () => {},
 })
 
 type IWorkspaceProviderProps = {
@@ -20,11 +22,12 @@ type IWorkspaceProviderProps = {
 export const WorkspaceProvider = ({
   children,
 }: IWorkspaceProviderProps) => {
-  const { data } = useSWR({ url: '/workspaces' }, fetchWorkspaces)
+  const { data, mutate } = useSWR({ url: '/workspaces' }, fetchWorkspaces)
 
   return (
     <WorkspacesContext.Provider value={{
       workspaces: data?.workspaces || [],
+      mutateWorkspaces: mutate,
     }}>
       {children}
     </WorkspacesContext.Provider>
