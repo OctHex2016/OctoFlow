@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import useSWR from 'swr'
 import { useContext } from 'use-context-selector'
-import { RiUserAddLine } from '@remixicon/react'
+import { RiUserAddLine, RiAddLine } from '@remixicon/react'
 import { useTranslation } from 'react-i18next'
 import InviteModal from './invite-modal'
 import InvitedModal from './invited-modal'
@@ -10,7 +10,7 @@ import EditWorkspaceModal from './edit-workspace-modal'
 import TransferOwnershipModal from './transfer-ownership-modal'
 import Operation from './operation'
 import TransferOwnership from './operation/transfer-ownership'
-import { fetchMembers } from '@/service/common'
+import { createWorkspace, fetchMembers } from '@/service/common'
 import I18n from '@/context/i18n'
 import { useAppContext } from '@/context/app-context'
 import Avatar from '@/app/components/base/avatar'
@@ -26,6 +26,10 @@ import Tooltip from '@/app/components/base/tooltip'
 import { RiPencilLine } from '@remixicon/react'
 import { useGlobalPublicStore } from '@/context/global-public-context'
 import { useFormatTimeFromNow } from '@/hooks/use-format-time-from-now'
+import { ToastContext } from '@/app/components/base/toast'
+import { basePath } from '@/utils/var'
+import Modal from '@/app/components/base/modal'
+import Input from '@/app/components/base/input'
 
 const MembersPage = () => {
   const { t } = useTranslation()
@@ -57,6 +61,26 @@ const MembersPage = () => {
   const isMemberFull = enableBilling && isNotUnlimitedMemberPlan && accounts.length >= plan.total.teamMembers
   const [editWorkspaceModalVisible, setEditWorkspaceModalVisible] = useState(false)
   const [showTransferOwnershipModal, setShowTransferOwnershipModal] = useState(false)
+  const [showCreateWorkspaceModal, setShowCreateWorkspaceModal] = useState(false)
+  const [newWorkspaceName, setNewWorkspaceName] = useState('')
+  const { notify } = useContext(ToastContext)
+
+  const handleCreateWorkspace = async () => {
+    if (!newWorkspaceName.trim()) {
+      notify({ type: 'error', message: t('common.account.workspaceNamePlaceholder') })
+      return
+    }
+    try {
+      await createWorkspace({ url: '/workspaces', body: { name: newWorkspaceName } })
+      notify({ type: 'success', message: t('common.actionMsg.modifiedSuccessfully') })
+      setShowCreateWorkspaceModal(false)
+      setNewWorkspaceName('')
+      location.assign(`${location.origin}${basePath}`)
+    }
+    catch {
+      notify({ type: 'error', message: t('common.provider.saveFailed') })
+    }
+  }
 
   return (
     <>
@@ -104,6 +128,12 @@ const MembersPage = () => {
           </div>
           {isMemberFull && (
             <UpgradeBtn className='mr-2' loc='member-invite' />
+          )}
+          {systemFeatures.is_allow_create_workspace && isCurrentWorkspaceManager && (
+            <Button className={cn('mr-2 shrink-0')} onClick={() => setShowCreateWorkspaceModal(true)}>
+              <RiAddLine className='mr-1 h-4 w-4' />
+              {t('common.userProfile.createWorkspace')}
+            </Button>
           )}
           <Button variant='primary' className={cn('shrink-0')} disabled={!isCurrentWorkspaceManager || isMemberFull} onClick={() => setInviteModalVisible(true)}>
             <RiUserAddLine className='mr-1 h-4 w-4' />
@@ -185,6 +215,30 @@ const MembersPage = () => {
           show={showTransferOwnershipModal}
           onClose={() => setShowTransferOwnershipModal(false)}
         />
+      )}
+      {showCreateWorkspaceModal && (
+        <Modal isShow onClose={() => setShowCreateWorkspaceModal(false)} className='w-[480px]'>
+          <div className='p-6'>
+            <div className='mb-4 text-xl font-semibold text-text-primary'>{t('common.userProfile.createWorkspace')}</div>
+            <div className='mb-4'>
+              <div className='mb-2 text-sm font-medium text-text-primary'>{t('common.account.workspaceName')}</div>
+              <Input
+                value={newWorkspaceName}
+                placeholder={t('common.account.workspaceNamePlaceholder')}
+                onChange={(e) => setNewWorkspaceName(e.target.value)}
+                onClear={() => setNewWorkspaceName('')}
+              />
+            </div>
+            <div className='flex justify-end gap-2'>
+              <Button size='large' onClick={() => setShowCreateWorkspaceModal(false)}>
+                {t('common.operation.cancel')}
+              </Button>
+              <Button size='large' variant='primary' onClick={handleCreateWorkspace}>
+                {t('common.operation.create')}
+              </Button>
+            </div>
+          </div>
+        </Modal>
       )}
     </>
   )

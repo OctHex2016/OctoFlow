@@ -75,7 +75,7 @@ export const defaultSystemFeatures: SystemFeatures = {
   enable_email_code_login: false,
   enable_email_password_login: false,
   enable_social_oauth_login: false,
-  is_allow_create_workspace: false,
+  is_allow_create_workspace: true,
   is_allow_register: false,
   is_email_setup: false,
   license: {

@@ -156,6 +156,10 @@ export const updateWorkspaceInfo: Fetcher<ICurrentWorkspace, { url: string; body
   return post<ICurrentWorkspace>(url, { body })
 }
 
+export const createWorkspace: Fetcher<CommonResponse & { tenant: ICurrentWorkspace }, { url: string; body: Record<string, any> }> = ({ url, body }) => {
+  return post<CommonResponse & { tenant: ICurrentWorkspace }>(url, { body })
+}
+
 export const fetchDataSource: Fetcher<{ data: DataSourceNotion[] }, { url: string }> = ({ url }) => {
   return get<{ data: DataSourceNotion[] }>(url)
 }

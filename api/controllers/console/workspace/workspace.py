@@ -91,6 +91,24 @@ class TenantListApi(Resource):
 
         return {"workspaces": marshal(tenant_dicts, tenants_fields)}, 200
 
+    @setup_required
+    @login_required
+    @account_initialization_required
+    def post(self):
+        parser = reqparse.RequestParser().add_argument("name", type=str, required=True, location="json")
+        args = parser.parse_args()
+
+        current_user, _ = current_account_with_tenant()
+
+        # Create new workspace
+        tenant = TenantService.create_tenant(name=args["name"])
+        TenantService.create_tenant_member(tenant, current_user, role="owner")
+
+        # Switch to the new workspace
+        TenantService.switch_tenant(current_user, tenant.id)
+
+        return {"result": "success", "tenant": marshal(WorkspaceService.get_tenant_info(tenant), tenant_fields)}, 201
+
 
 @console_ns.route("/all-workspaces")
 class WorkspaceListApi(Resource):

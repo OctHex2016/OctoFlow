@@ -1,21 +1,30 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { useContext } from 'use-context-selector'
 import { useTranslation } from 'react-i18next'
 import { Menu, MenuButton, MenuItems, Transition } from '@headlessui/react'
-import { RiArrowDownSLine } from '@remixicon/react'
+import { RiArrowDownSLine, RiAddLine } from '@remixicon/react'
 import cn from '@/utils/classnames'
 import { basePath } from '@/utils/var'
 import PlanBadge from '@/app/components/header/plan-badge'
-import { switchWorkspace } from '@/service/common'
+import { createWorkspace, switchWorkspace } from '@/service/common'
 import { useWorkspacesContext } from '@/context/workspace-context'
 import { ToastContext } from '@/app/components/base/toast'
 import type { Plan } from '@/app/components/billing/type'
+import Modal from '@/app/components/base/modal'
+import Input from '@/app/components/base/input'
+import Button from '@/app/components/base/button'
+import { useAppContext } from '@/context/app-context'
+import { useGlobalPublicStore } from '@/context/global-public-context'
 
 const WorkplaceSelector = () => {
   const { t } = useTranslation()
   const { notify } = useContext(ToastContext)
   const { workspaces } = useWorkspacesContext()
   const currentWorkspace = workspaces.find(v => v.current)
+  const [showCreateModal, setShowCreateModal] = useState(false)
+  const [workspaceName, setWorkspaceName] = useState('')
+  const { isCurrentWorkspaceManager } = useAppContext()
+  const { systemFeatures } = useGlobalPublicStore()
 
   const handleSwitchWorkspace = async (tenant_id: string) => {
     try {
@@ -30,7 +39,25 @@ const WorkplaceSelector = () => {
     }
   }
 
+  const handleCreateWorkspace = async () => {
+    if (!workspaceName.trim()) {
+      notify({ type: 'error', message: t('common.account.workspaceNamePlaceholder') })
+      return
+    }
+    try {
+      await createWorkspace({ url: '/workspaces', body: { name: workspaceName } })
+      notify({ type: 'success', message: t('common.actionMsg.modifiedSuccessfully') })
+      setShowCreateModal(false)
+      setWorkspaceName('')
+      location.assign(`${location.origin}${basePath}`)
+    }
+    catch {
+      notify({ type: 'error', message: t('common.provider.saveFailed') })
+    }
+  }
+
   return (
+    <>
     <Menu as="div" className="min-w-0">
       {
         ({ open }) => (
@@ -82,6 +109,14 @@ const WorkplaceSelector = () => {
                       </div>
                     ))
                   }
+                  {systemFeatures.is_allow_create_workspace && isCurrentWorkspaceManager && (
+                    <div className='flex items-center gap-2 self-stretch rounded-lg py-1 pl-3 pr-2 hover:bg-state-base-hover cursor-pointer border-t border-divider-subtle mt-1 pt-2' onClick={() => setShowCreateModal(true)}>
+                      <div className='flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-components-button-secondary-bg'>
+                        <RiAddLine className='h-4 w-4 text-components-button-secondary-text' />
+                      </div>
+                      <div className='system-md-regular grow text-text-secondary'>{t('common.userProfile.createWorkspace')}</div>
+                    </div>
+                  )}
                 </div>
               </MenuItems>
             </Transition>
@@ -89,6 +124,31 @@ const WorkplaceSelector = () => {
         )
       }
     </Menu>
+    {showCreateModal && (
+      <Modal isShow onClose={() => setShowCreateModal(false)} className='w-[480px]'>
+        <div className='p-6'>
+          <div className='mb-4 text-xl font-semibold text-text-primary'>{t('common.userProfile.createWorkspace')}</div>
+          <div className='mb-4'>
+            <div className='mb-2 text-sm font-medium text-text-primary'>{t('common.account.workspaceName')}</div>
+            <Input
+              value={workspaceName}
+              placeholder={t('common.account.workspaceNamePlaceholder')}
+              onChange={(e) => setWorkspaceName(e.target.value)}
+              onClear={() => setWorkspaceName('')}
+            />
+          </div>
+          <div className='flex justify-end gap-2'>
+            <Button size='large' onClick={() => setShowCreateModal(false)}>
+              {t('common.operation.cancel')}
+            </Button>
+            <Button size='large' variant='primary' onClick={handleCreateWorkspace}>
+              {t('common.operation.create')}
+            </Button>
+          </div>
+        </div>
+      </Modal>
+    )}
+  </>
   )
 }
 
