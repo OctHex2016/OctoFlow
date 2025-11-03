@@ -128,42 +128,6 @@ export default function AppSelector() {
                       </div>
                     </MenuItem>
                   </div>
-                  {!systemFeatures.branding.enabled && <>
-                    <div className='p-1'>
-                      <MenuItem>
-                        <Link
-                          className={cn(itemClassName, 'group justify-between',
-                            'data-[active]:bg-state-base-hover',
-                          )}
-                          href={docLink('/introduction')}
-                          target='_blank' rel='noopener noreferrer'>
-                          <RiBookOpenLine className='size-4 shrink-0 text-text-tertiary' />
-                          <div className='system-md-regular grow px-1 text-text-secondary'>{t('common.userProfile.helpCenter')}</div>
-                          <RiArrowRightUpLine className='size-[14px] shrink-0 text-text-tertiary' />
-                        </Link>
-                      </MenuItem>
-                      <Support closeAccountDropdown={close} />
-                      {IS_CLOUD_EDITION && isCurrentWorkspaceOwner && <Compliance />}
-                    </div>
-                    <div className='p-1'>
-                      {
-                        document?.body?.getAttribute('data-public-site-about') !== 'hide' && (
-                          <MenuItem>
-                            <div className={cn(itemClassName, 'justify-between',
-                              'data-[active]:bg-state-base-hover',
-                            )} onClick={() => setAboutVisible(true)}>
-                              <RiInformation2Line className='size-4 shrink-0 text-text-tertiary' />
-                              <div className='system-md-regular grow px-1 text-text-secondary'>{t('common.userProfile.about')}</div>
-                              <div className='flex shrink-0 items-center'>
-                                <div className='system-xs-regular mr-2 text-text-tertiary'>{langGeniusVersionInfo.current_version}</div>
-                                <Indicator color={langGeniusVersionInfo.current_version === langGeniusVersionInfo.latest_version ? 'green' : 'orange'} />
-                              </div>
-                            </div>
-                          </MenuItem>
-                        )
-                      }
-                    </div>
-                  </>}
                   <MenuItem disabled>
                     <div className='p-1'>
                       <div className={cn(itemClassName, 'hover:bg-transparent')}>
