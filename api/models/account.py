@@ -241,7 +241,7 @@ class Tenant(TypeBase):
     name: Mapped[str] = mapped_column(String(255))
     encrypt_public_key: Mapped[str | None] = mapped_column(sa.Text, default=None)
     plan: Mapped[str] = mapped_column(
-        String(255), server_default=sa.text("'basic'::character varying"), default="basic"
+        String(255), server_default=sa.text("'enterprise'::character varying"), default="enterprise"
     )
     status: Mapped[str] = mapped_column(
         String(255), server_default=sa.text("'normal'::character varying"), default="normal"
