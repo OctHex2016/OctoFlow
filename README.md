@@ -1,14 +1,14 @@
 ![cover-v5-optimized](./images/GitHub_README_if.png)
 
 <p align="center">
-  📌 <a href="https://dify.ai/blog/introducing-dify-workflow-file-upload-a-demo-on-ai-podcast">Introducing Dify Workflow File Upload: Recreate Google NotebookLM Podcast</a>
+  📌 <a href="https://dify.ai/blog/introducing-dify-workflow-file-upload-a-demo-on-ai-podcast">Introducing OctoFlow Workflow File Upload: Recreate Google NotebookLM Podcast</a>
 </p>
 
 <p align="center">
-  <a href="https://cloud.dify.ai">Dify Cloud</a> ·
+  <a href="https://cloud.dify.ai">OctoFlow Cloud</a> ·
   <a href="https://docs.dify.ai/getting-started/install-self-hosted">Self-hosting</a> ·
   <a href="https://docs.dify.ai">Documentation</a> ·
-  <a href="https://dify.ai/pricing">Dify edition overview</a>
+  <a href="https://dify.ai/pricing">OctoFlow edition overview</a>
 </p>
 
 <p align="center">
@@ -54,18 +54,18 @@
   <a href="./docs/bn-BD/README.md"><img alt="README in বাংলা" src="https://img.shields.io/badge/বাংলা-d9d9d9"></a>
 </p>
 
-Dify is an open-source platform for developing LLM applications. Its intuitive interface combines agentic AI workflows, RAG pipelines, agent capabilities, model management, observability features, and more—allowing you to quickly move from prototype to production.
+OctoFlow is an open-source platform for developing LLM applications. Its intuitive interface combines agentic AI workflows, RAG pipelines, agent capabilities, model management, observability features, and more—allowing you to quickly move from prototype to production.
 
 ## Quick start
 
-> Before installing Dify, make sure your machine meets the following minimum system requirements:
+> Before installing OctoFlow, make sure your machine meets the following minimum system requirements:
 >
 > - CPU >= 2 Core
 > - RAM >= 4 GiB
 
 <br/>
 
-The easiest way to start the Dify server is through [Docker Compose](docker/docker-compose.yaml). Before running Dify with the following commands, make sure that [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine:
+The easiest way to start the OctoFlow server is through [Docker Compose](docker/docker-compose.yaml). Before running OctoFlow with the following commands, make sure that [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine:
 
 ```bash
 cd dify
@@ -74,13 +74,13 @@ cp .env.example .env
 docker compose up -d
 ```
 
-After running, you can access the Dify dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
+After running, you can access the OctoFlow dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
 
 #### Seeking help
 
-Please refer to our [FAQ](https://docs.dify.ai/getting-started/install-self-hosted/faqs) if you encounter problems setting up Dify. Reach out to [the community and us](#community--contact) if you are still having issues.
+Please refer to our [FAQ](https://docs.dify.ai/getting-started/install-self-hosted/faqs) if you encounter problems setting up OctoFlow. Reach out to [the community and us](#community--contact) if you are still having issues.
 
-> If you'd like to contribute to Dify or do additional development, refer to our [guide to deploying from source code](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
+> If you'd like to contribute to OctoFlow or do additional development, refer to our [guide to deploying from source code](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
 
 ## Key features
 
@@ -99,31 +99,31 @@ Intuitive interface for crafting prompts, comparing model performance, and addin
 Extensive RAG capabilities that cover everything from document ingestion to retrieval, with out-of-box support for text extraction from PDFs, PPTs, and other common document formats.
 
 **5. Agent capabilities**:
-You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. Dify provides 50+ built-in tools for AI agents, such as Google Search, DALL·E, Stable Diffusion and WolframAlpha.
+You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. OctoFlow provides 50+ built-in tools for AI agents, such as Google Search, DALL·E, Stable Diffusion and WolframAlpha.
 
 **6. LLMOps**:
 Monitor and analyze application logs and performance over time. You could continuously improve prompts, datasets, and models based on production data and annotations.
 
 **7. Backend-as-a-Service**:
-All of Dify's offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic.
+All of OctoFlow's offerings come with corresponding APIs, so you could effortlessly integrate OctoFlow into your own business logic.
 
-## Using Dify
+## Using OctoFlow
 
 - **Cloud <br/>**
-  We host a [Dify Cloud](https://dify.ai) service for anyone to try with zero setup. It provides all the capabilities of the self-deployed version, and includes 200 free GPT-4 calls in the sandbox plan.
+  We host a [OctoFlow Cloud](https://dify.ai) service for anyone to try with zero setup. It provides all the capabilities of the self-deployed version, and includes 200 free GPT-4 calls in the sandbox plan.
 
-- **Self-hosting Dify Community Edition<br/>**
-  Quickly get Dify running in your environment with this [starter guide](#quick-start).
+- **Self-hosting OctoFlow Community Edition<br/>**
+  Quickly get OctoFlow running in your environment with this [starter guide](#quick-start).
   Use our [documentation](https://docs.dify.ai) for further references and more in-depth instructions.
 
-- **Dify for enterprise / organizations<br/>**
+- **OctoFlow for enterprise / organizations<br/>**
   We provide additional enterprise-centric features. [Log your questions for us through this chatbot](https://udify.app/chat/22L1zSxg6yW1cWQg) or [send us an email](mailto:business@dify.ai?subject=%5BGitHub%5DBusiness%20License%20Inquiry) to discuss enterprise needs. <br/>
 
-  > For startups and small businesses using AWS, check out [Dify Premium on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-t22mebxzwjhu6) and deploy it to your own AWS VPC with one click. It's an affordable AMI offering with the option to create apps with custom logo and branding.
+  > For startups and small businesses using AWS, check out [OctoFlow Premium on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-t22mebxzwjhu6) and deploy it to your own AWS VPC with one click. It's an affordable AMI offering with the option to create apps with custom logo and branding.
 
 ## Staying ahead
 
-Star Dify on GitHub and be instantly notified of new releases.
+Star OctoFlow on GitHub and be instantly notified of new releases.
 
 ![star-us](https://github.com/langgenius/dify/assets/13230914/b823edc1-6388-4e25-ad45-2f6b187adbb4)
 
@@ -135,24 +135,24 @@ If you need to customize the configuration, please refer to the comments in our 
 
 ### Metrics Monitoring with Grafana
 
-Import the dashboard to Grafana, using Dify's PostgreSQL database as data source, to monitor metrics in granularity of apps, tenants, messages, and more.
+Import the dashboard to Grafana, using OctoFlow's PostgreSQL database as data source, to monitor metrics in granularity of apps, tenants, messages, and more.
 
 - [Grafana Dashboard by @bowenliang123](https://github.com/bowenliang123/dify-grafana-dashboard)
 
 ### Deployment with Kubernetes
 
-If you'd like to configure a highly-available setup, there are community-contributed [Helm Charts](https://helm.sh/) and YAML files which allow Dify to be deployed on Kubernetes.
+If you'd like to configure a highly-available setup, there are community-contributed [Helm Charts](https://helm.sh/) and YAML files which allow OctoFlow to be deployed on Kubernetes.
 
 - [Helm Chart by @LeoQuote](https://github.com/douban/charts/tree/master/charts/dify)
 - [Helm Chart by @BorisPolonsky](https://github.com/BorisPolonsky/dify-helm)
 - [Helm Chart by @magicsong](https://github.com/magicsong/ai-charts)
 - [YAML file by @Winson-030](https://github.com/Winson-030/dify-kubernetes)
 - [YAML file by @wyy-holding](https://github.com/wyy-holding/dify-k8s)
-- [🚀 NEW! YAML files (Supports Dify v1.6.0) by @Zhoneym](https://github.com/Zhoneym/DifyAI-Kubernetes)
+- [🚀 NEW! YAML files (Supports OctoFlow v1.6.0) by @Zhoneym](https://github.com/Zhoneym/OctoFlowAI-Kubernetes)
 
 #### Using Terraform for Deployment
 
-Deploy Dify to Cloud Platform with a single click using [terraform](https://www.terraform.io/)
+Deploy OctoFlow to Cloud Platform with a single click using [terraform](https://www.terraform.io/)
 
 ##### Azure Global
 
@@ -164,7 +164,7 @@ Deploy Dify to Cloud Platform with a single click using [terraform](https://www.
 
 #### Using AWS CDK for Deployment
 
-Deploy Dify to AWS with [CDK](https://aws.amazon.com/cdk/)
+Deploy OctoFlow to AWS with [CDK](https://aws.amazon.com/cdk/)
 
 ##### AWS
 
@@ -173,27 +173,27 @@ Deploy Dify to AWS with [CDK](https://aws.amazon.com/cdk/)
 
 #### Using Alibaba Cloud Computing Nest
 
-Quickly deploy Dify to Alibaba cloud with [Alibaba Cloud Computing Nest](https://computenest.console.aliyun.com/service/instance/create/default?type=user&ServiceName=Dify%E7%A4%BE%E5%8C%BA%E7%89%88)
+Quickly deploy OctoFlow to Alibaba cloud with [Alibaba Cloud Computing Nest](https://computenest.console.aliyun.com/service/instance/create/default?type=user&ServiceName=OctoFlow%E7%A4%BE%E5%8C%BA%E7%89%88)
 
 #### Using Alibaba Cloud Data Management
 
-One-Click deploy Dify to Alibaba Cloud with [Alibaba Cloud Data Management](https://www.alibabacloud.com/help/en/dms/dify-in-invitational-preview/)
+One-Click deploy OctoFlow to Alibaba Cloud with [Alibaba Cloud Data Management](https://www.alibabacloud.com/help/en/dms/dify-in-invitational-preview/)
 
 #### Deploy to AKS with Azure Devops Pipeline
 
-One-Click deploy Dify to AKS with [Azure Devops Pipeline Helm Chart by @LeoZhang](https://github.com/Ruiruiz30/Dify-helm-chart-AKS)
+One-Click deploy OctoFlow to AKS with [Azure Devops Pipeline Helm Chart by @LeoZhang](https://github.com/Ruiruiz30/OctoFlow-helm-chart-AKS)
 
 ## Contributing
 
 For those who'd like to contribute code, see our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md).
-At the same time, please consider supporting Dify by sharing it on social media and at events and conferences.
+At the same time, please consider supporting OctoFlow by sharing it on social media and at events and conferences.
 
-> We are looking for contributors to help translate Dify into languages other than Mandarin or English. If you are interested in helping, please see the [i18n README](https://github.com/langgenius/dify/blob/main/web/i18n-config/README.md) for more information, and leave us a comment in the `global-users` channel of our [Discord Community Server](https://discord.gg/8Tpq4AcN9c).
+> We are looking for contributors to help translate OctoFlow into languages other than Mandarin or English. If you are interested in helping, please see the [i18n README](https://github.com/langgenius/dify/blob/main/web/i18n-config/README.md) for more information, and leave us a comment in the `global-users` channel of our [Discord Community Server](https://discord.gg/8Tpq4AcN9c).
 
 ## Community & contact
 
 - [GitHub Discussion](https://github.com/langgenius/dify/discussions). Best for: sharing feedback and asking questions.
-- [GitHub Issues](https://github.com/langgenius/dify/issues). Best for: bugs you encounter using Dify.AI, and feature proposals. See our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md).
+- [GitHub Issues](https://github.com/langgenius/dify/issues). Best for: bugs you encounter using OctoFlow.AI, and feature proposals. See our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md).
 - [Discord](https://discord.gg/FngNHpbcY7). Best for: sharing your applications and hanging out with the community.
 - [X(Twitter)](https://twitter.com/dify_ai). Best for: sharing your applications and hanging out with the community.
 
@@ -213,4 +213,4 @@ To protect your privacy, please avoid posting security issues on GitHub. Instead
 
 ## License
 
-This repository is licensed under the [Dify Open Source License](LICENSE), based on Apache 2.0 with additional conditions.
+This repository is licensed under the [OctoFlow Open Source License](LICENSE), based on Apache 2.0 with additional conditions.

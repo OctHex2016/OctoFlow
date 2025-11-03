@@ -213,9 +213,9 @@ const translation = {
     pluginsResult: '{{num}} resultados',
     discover: 'Descubrir',
     and: 'y',
-    difyMarketplace: 'Mercado de Dify',
-    verifiedTip: 'Verificado por Dify',
-    partnerTip: 'Verificado por un socio de Dify',
+    difyMarketplace: 'Mercado de OctoFlow',
+    verifiedTip: 'Verificado por OctoFlow',
+    partnerTip: 'Verificado por un socio de OctoFlow',
   },
   task: {
     installing: 'Instalando plugins {{installingLength}}, 0 hecho.',
@@ -246,7 +246,7 @@ const translation = {
     title: 'Complementos',
   },
   difyVersionNotCompatible:
-    'La versión actual de Dify no es compatible con este plugin, por favor actualiza a la versión mínima requerida: {{minimalDifyVersion}}',
+    'La versión actual de OctoFlow no es compatible con este plugin, por favor actualiza a la versión mínima requerida: {{minimalOctoFlowVersion}}',
   requestAPlugin: 'Solicitar un plugin',
   publishPlugins: 'Publicar plugins',
   auth: {

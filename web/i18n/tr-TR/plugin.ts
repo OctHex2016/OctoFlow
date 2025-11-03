@@ -189,14 +189,14 @@ const translation = {
     and: 've',
     empower: 'Yapay zeka geliştirmenizi güçlendirin',
     pluginsResult: '{{num}} sonuç',
-    difyMarketplace: 'Dify Pazar Yeri',
+    difyMarketplace: 'OctoFlow Pazar Yeri',
     sortBy: 'Kara şehir',
     moreFrom: 'Marketplace\'ten daha fazlası',
     noPluginFound: 'Eklenti bulunamadı',
     viewMore: 'Daha fazla göster',
     discover: 'Keşfetmek',
-    verifiedTip: 'Dify tarafından doğrulanmıştır.',
-    partnerTip: 'Dify partner\'ı tarafından doğrulandı',
+    verifiedTip: 'OctoFlow tarafından doğrulanmıştır.',
+    partnerTip: 'OctoFlow partner\'ı tarafından doğrulandı',
   },
   task: {
     installedError: '{{errorLength}} eklentileri yüklenemedi',
@@ -223,7 +223,7 @@ const translation = {
   metadata: {
     title: 'Eklentiler',
   },
-  difyVersionNotCompatible: 'Mevcut Dify sürümü bu eklentiyle uyumlu değil, lütfen gerekli minimum sürüme güncelleyin: {{minimalDifyVersion}}',
+  difyVersionNotCompatible: 'Mevcut OctoFlow sürümü bu eklentiyle uyumlu değil, lütfen gerekli minimum sürüme güncelleyin: {{minimalOctoFlowVersion}}',
   requestAPlugin: 'Bir eklenti iste',
   publishPlugins: 'Eklentileri yayınlayın',
   auth: {

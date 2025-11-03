@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 import { ThemeProvider } from 'next-themes'
 import type { ReactNode } from 'react'
-import DifyLogo from './dify-logo'
+import OctoFlowLogo from './dify-logo'
 import LogoSite from './logo-site'
 import LogoEmbeddedChatHeader from './logo-embedded-chat-header'
 import LogoEmbeddedChatAvatar from './logo-embedded-chat-avatar'
 
 const meta = {
   title: 'Base/General/Logo',
-  component: DifyLogo,
+  component: OctoFlowLogo,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Brand assets rendered in different contexts. DifyLogo adapts to the active theme while other variants target specific surfaces.',
+        component: 'Brand assets rendered in different contexts. OctoFlowLogo adapts to the active theme while other variants target specific surfaces.',
       },
     },
   },
@@ -32,7 +32,7 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof DifyLogo>
+} satisfies Meta<typeof OctoFlowLogo>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -57,7 +57,7 @@ export const Playground: Story = {
           <div className="flex flex-col gap-2">
             <span className="text-xs uppercase tracking-[0.18em] text-text-tertiary">Primary logo</span>
             <div className="flex items-center justify-between rounded-xl border border-divider-subtle bg-background-default p-4">
-              <DifyLogo size={size} style={style} />
+              <OctoFlowLogo size={size} style={style} />
               <code className="text-[11px] text-text-tertiary">{`size="${size}" | style="${style}"`}</code>
             </div>
           </div>

@@ -187,7 +187,7 @@ const translation = {
       mostPopular: 'I più popolari',
     },
     moreFrom: 'Altro da Marketplace',
-    difyMarketplace: 'Mercato Dify',
+    difyMarketplace: 'Mercato OctoFlow',
     discover: 'Scoprire',
     pluginsResult: '{{num}} risultati',
     noPluginFound: 'Nessun plug-in trovato',
@@ -195,8 +195,8 @@ const translation = {
     sortBy: 'Ordina per',
     and: 'e',
     viewMore: 'Vedi di più',
-    verifiedTip: 'Verificato da Dify',
-    partnerTip: 'Verificato da un partner Dify',
+    verifiedTip: 'Verificato da OctoFlow',
+    partnerTip: 'Verificato da un partner OctoFlow',
   },
   task: {
     clearAll: 'Cancella tutto',
@@ -223,7 +223,7 @@ const translation = {
   metadata: {
     title: 'Plugin',
   },
-  difyVersionNotCompatible: 'L\'attuale versione di Dify non è compatibile con questo plugin, si prega di aggiornare alla versione minima richiesta: {{minimalDifyVersion}}',
+  difyVersionNotCompatible: 'L\'attuale versione di OctoFlow non è compatibile con questo plugin, si prega di aggiornare alla versione minima richiesta: {{minimalOctoFlowVersion}}',
   requestAPlugin: 'Richiedi un plugin',
   publishPlugins: 'Pubblicare plugin',
   auth: {

@@ -105,7 +105,7 @@ const Installed: FC<Props> = ({
   }
 
   const { langGeniusVersionInfo } = useAppContext()
-  const isDifyVersionCompatible = useMemo(() => {
+  const isOctoFlowVersionCompatible = useMemo(() => {
     if (!langGeniusVersionInfo.current_version)
       return true
     return gte(langGeniusVersionInfo.current_version, payload.meta.minimum_dify_version ?? '0.0.0')
@@ -122,9 +122,9 @@ const Installed: FC<Props> = ({
               components={{ trustSource: <span className='system-md-semibold' /> }}
             />
           </p>
-          {!isDifyVersionCompatible && (
+          {!isOctoFlowVersionCompatible && (
             <p className='system-md-regular flex items-center gap-1 text-text-warning'>
-              {t('plugin.difyVersionNotCompatible', { minimalDifyVersion: payload.meta.minimum_dify_version })}
+              {t('plugin.difyVersionNotCompatible', { minimalOctoFlowVersion: payload.meta.minimum_dify_version })}
             </p>
           )}
         </div>

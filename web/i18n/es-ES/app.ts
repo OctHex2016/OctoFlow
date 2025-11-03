@@ -161,7 +161,7 @@ const translation = {
     },
     aliyun: {
       title: 'Monitor de Nubes',
-      description: 'La plataforma de observabilidad totalmente gestionada y sin mantenimiento proporcionada por Alibaba Cloud, permite la monitorización, trazado y evaluación de aplicaciones Dify de manera inmediata.',
+      description: 'La plataforma de observabilidad totalmente gestionada y sin mantenimiento proporcionada por Alibaba Cloud, permite la monitorización, trazado y evaluación de aplicaciones OctoFlow de manera inmediata.',
     },
     tencent: {
       title: 'Tencent APM',

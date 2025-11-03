@@ -1,3 +1,3 @@
-export const isDify = () => {
+export const isOctoFlow = () => {
   return document.referrer.includes('dify.ai')
 }

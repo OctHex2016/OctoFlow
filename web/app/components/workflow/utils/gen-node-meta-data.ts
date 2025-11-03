@@ -19,7 +19,7 @@ export const genNodeMetaData = ({
   sort,
   type,
   title = '',
-  author = 'Dify',
+  author = 'OctoFlow',
   helpLinkUri,
   isRequired = false,
   isUndeletable = false,

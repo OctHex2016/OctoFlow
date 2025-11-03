@@ -1,4 +1,4 @@
-# Dify Frontend
+# OctoFlow Frontend
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -114,4 +114,4 @@ Visit <https://docs.dify.ai/getting-started/readme> to view the full documentati
 
 ## Community
 
-The Dify community can be found on [Discord community](https://discord.gg/5AEfbxcd9k), where you can ask questions, voice ideas, and share your projects.
+The OctoFlow community can be found on [Discord community](https://discord.gg/5AEfbxcd9k), where you can ask questions, voice ideas, and share your projects.

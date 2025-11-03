@@ -51,7 +51,7 @@ export const getMarketplacePluginsByCollectionId = async (collectionId: string, 
   try {
     const url = `${MARKETPLACE_API_PREFIX}/collections/${collectionId}/plugins`
     const headers = new Headers({
-      'X-Dify-Version': APP_VERSION,
+      'X-OctoFlow-Version': APP_VERSION,
     })
     const marketplaceCollectionPluginsData = await globalThis.fetch(
       url,
@@ -89,7 +89,7 @@ export const getMarketplaceCollectionsAndPlugins = async (query?: CollectionsAnd
     if (query?.type)
       marketplaceUrl += `&type=${query.type}`
     const headers = new Headers({
-      'X-Dify-Version': APP_VERSION,
+      'X-OctoFlow-Version': APP_VERSION,
     })
     const marketplaceCollectionsData = await globalThis.fetch(marketplaceUrl, { headers, cache: 'no-store' })
     const marketplaceCollectionsDataJson = await marketplaceCollectionsData.json()

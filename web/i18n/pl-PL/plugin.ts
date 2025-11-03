@@ -192,11 +192,11 @@ const translation = {
     empower: 'Zwiększ możliwości rozwoju sztucznej inteligencji',
     viewMore: 'Zobacz więcej',
     and: 'i',
-    difyMarketplace: 'Rynek Dify',
+    difyMarketplace: 'Rynek OctoFlow',
     noPluginFound: 'Nie znaleziono wtyczki',
     pluginsResult: '{{num}} wyniki',
-    partnerTip: 'Zweryfikowane przez partnera Dify',
-    verifiedTip: 'Zweryfikowane przez Dify',
+    partnerTip: 'Zweryfikowane przez partnera OctoFlow',
+    verifiedTip: 'Zweryfikowane przez OctoFlow',
   },
   task: {
     installError: 'Nie udało się zainstalować wtyczek {{errorLength}}, kliknij, aby wyświetlić',
@@ -223,7 +223,7 @@ const translation = {
   metadata: {
     title: 'Wtyczki',
   },
-  difyVersionNotCompatible: 'Obecna wersja Dify nie jest kompatybilna z tym wtyczką, proszę zaktualizować do minimalnej wymaganej wersji: {{minimalDifyVersion}}',
+  difyVersionNotCompatible: 'Obecna wersja OctoFlow nie jest kompatybilna z tym wtyczką, proszę zaktualizować do minimalnej wymaganej wersji: {{minimalOctoFlowVersion}}',
   requestAPlugin: 'Poproś o wtyczkę',
   publishPlugins: 'Publikowanie wtyczek',
   auth: {

@@ -8,7 +8,7 @@ const translation = {
   contribute: {
     viewGuide: 'Lihat panduan',
     line1: 'Saya tertarik',
-    line2: 'menyumbangkan alat untuk Dify.',
+    line2: 'menyumbangkan alat untuk OctoFlow.',
   },
   auth: {
     setup: 'Menyiapkan otorisasi untuk digunakan',
@@ -239,7 +239,7 @@ const translation = {
   },
   title: 'Perkakas',
   createCustomTool: 'Buat Alat Kustom',
-  customToolTip: 'Pelajari alat kustom Dify lebih lanjut',
+  customToolTip: 'Pelajari alat kustom OctoFlow lebih lanjut',
   addTool: 'Tambahkan Alat',
   author: 'Oleh',
   copyToolName: 'Salin Nama',

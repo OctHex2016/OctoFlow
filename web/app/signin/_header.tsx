@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 import { useGlobalPublicStore } from '@/context/global-public-context'
 
 // Avoid rendering the logo and theme selector on the server
-const DifyLogo = dynamic(() => import('@/app/components/base/logo/dify-logo'), {
+const OctoFlowLogo = dynamic(() => import('@/app/components/base/logo/dify-logo'), {
   ssr: false,
   loading: () => <div className='h-7 w-16 bg-transparent' />,
 })
@@ -31,7 +31,7 @@ const Header = () => {
           className='block h-7 w-auto object-contain'
           alt='logo'
         />
-        : <DifyLogo size='large' />}
+        : <OctoFlowLogo size='large' />}
       <div className='flex items-center gap-1'>
         <LocaleSigninSelect
           value={locale}
