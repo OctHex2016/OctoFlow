@@ -81,30 +81,6 @@ export default function Support({ closeAccountDropdown }: SupportProps) {
                     )}
                   </MenuItem>
                 )}
-                <MenuItem>
-                  <Link
-                    className={cn(itemClassName, 'group justify-between',
-                      'data-[active]:bg-state-base-hover',
-                    )}
-                    href='https://github.com/langgenius/dify/discussions/categories/feedbacks'
-                    target='_blank' rel='noopener noreferrer'>
-                    <RiFeedbackLine className='size-4 shrink-0 text-text-tertiary' />
-                    <div className='system-md-regular grow px-1 text-text-secondary'>{t('common.userProfile.communityFeedback')}</div>
-                    <RiArrowRightUpLine className='size-[14px] shrink-0 text-text-tertiary' />
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link
-                    className={cn(itemClassName, 'group justify-between',
-                      'data-[active]:bg-state-base-hover',
-                    )}
-                    href='https://discord.gg/5AEfbxcd9k'
-                    target='_blank' rel='noopener noreferrer'>
-                    <RiDiscordLine className='size-4 shrink-0 text-text-tertiary' />
-                    <div className='system-md-regular grow px-1 text-text-secondary'>{t('common.userProfile.community')}</div>
-                    <RiArrowRightUpLine className='size-[14px] shrink-0 text-text-tertiary' />
-                  </Link>
-                </MenuItem>
               </div>
             </MenuItems>
           </Transition>
