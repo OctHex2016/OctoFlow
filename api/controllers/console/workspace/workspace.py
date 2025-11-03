@@ -277,3 +277,49 @@ class WorkspaceInfoApi(Resource):
         db.session.commit()
 
         return {"result": "success", "tenant": marshal(WorkspaceService.get_tenant_info(tenant), tenant_fields)}
+
+
+@console_ns.route("/workspaces/<uuid:workspace_id>")
+class WorkspaceDeleteApi(Resource):
+    @setup_required
+    @login_required
+    @account_initialization_required
+    def delete(self, workspace_id):
+        current_user, current_tenant_id = current_account_with_tenant()
+        workspace_id_str = str(workspace_id)
+        
+        # Get the workspace to delete
+        tenant = db.session.query(Tenant).filter(Tenant.id == workspace_id_str).first()
+        if not tenant:
+            raise ValueError("Workspace not found")
+        
+        # Check if user is a member of this workspace
+        tenants = TenantService.get_join_tenants(current_user)
+        if not any(t.id == workspace_id_str for t in tenants):
+            raise Unauthorized("You are not a member of this workspace")
+        
+        # Check if user is owner or admin
+        from models.account import TenantAccountJoin
+        join = db.session.query(TenantAccountJoin).filter(
+            TenantAccountJoin.tenant_id == workspace_id_str,
+            TenantAccountJoin.account_id == current_user.id
+        ).first()
+        
+        if not join or join.role not in ['owner', 'admin']:
+            raise Unauthorized("Only owners and admins can delete workspaces")
+        
+        # Prevent deleting the last workspace
+        if len(tenants) <= 1:
+            raise ValueError("Cannot delete the last workspace")
+        
+        # Archive the workspace instead of hard delete
+        tenant.status = TenantStatus.ARCHIVE
+        db.session.commit()
+        
+        # If deleting current workspace, switch to another one
+        if workspace_id_str == current_tenant_id:
+            other_tenants = [t for t in tenants if t.id != workspace_id_str]
+            if other_tenants:
+                TenantService.switch_tenant(current_user, other_tenants[0].id)
+        
+        return {"result": "success"}, 200

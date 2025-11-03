@@ -160,6 +160,10 @@ export const createWorkspace: Fetcher<CommonResponse & { tenant: ICurrentWorkspa
   return post<CommonResponse & { tenant: ICurrentWorkspace }>(url, { body })
 }
 
+export const deleteWorkspace: Fetcher<CommonResponse, { url: string }> = ({ url }) => {
+  return del<CommonResponse>(url)
+}
+
 export const fetchDataSource: Fetcher<{ data: DataSourceNotion[] }, { url: string }> = ({ url }) => {
   return get<{ data: DataSourceNotion[] }>(url)
 }

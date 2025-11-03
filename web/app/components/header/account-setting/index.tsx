@@ -16,9 +16,12 @@ import {
   RiPuzzle2Fill,
   RiPuzzle2Line,
   RiTranslate2,
+  RiSettings3Fill,
+  RiSettings3Line,
 } from '@remixicon/react'
 import Button from '../../base/button'
 import MembersPage from './members-page'
+import WorkspacePage from './workspace-page'
 import LanguagePage from './language-page'
 import ApiBasedExtensionPage from './api-based-extension-page'
 import DataSourcePage from './data-source-page-new'
@@ -73,6 +76,12 @@ export default function AccountSetting({
         name: t('common.settings.members'),
         icon: <RiGroup2Line className={iconClassName} />,
         activeIcon: <RiGroup2Fill className={iconClassName} />,
+      },
+      {
+        key: 'workspace',
+        name: t('common.workspace.manage'),
+        icon: <RiSettings3Line className={iconClassName} />,
+        activeIcon: <RiSettings3Fill className={iconClassName} />,
       },
       {
         // Use key false to hide this item
@@ -215,6 +224,7 @@ export default function AccountSetting({
             <div className='px-4 pt-2 sm:px-8'>
               {activeMenu === 'provider' && <ModelProviderPage searchText={searchValue} />}
               {activeMenu === 'members' && <MembersPage />}
+              {activeMenu === 'workspace' && <WorkspacePage />}
               {activeMenu === 'billing' && <BillingPage />}
               {activeMenu === 'data-source' && <DataSourcePage />}
               {activeMenu === 'api-based-extension' && <ApiBasedExtensionPage />}
