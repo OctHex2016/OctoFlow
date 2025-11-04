@@ -28,7 +28,24 @@
     border-components-button-primary-border
     hover:bg-components-button-primary-bg-hover
     hover:border-components-button-primary-border-hover
-    text-components-button-primary-text;
+    text-components-button-primary-text
+    transition-all duration-300;
+    background: linear-gradient(135deg, #0e7490 0%, #0d9488 100%) !important;
+    box-shadow: 0 2px 12px rgba(14, 116, 144, 0.3);
+    border: none !important;
+    font-weight: 600;
+    color: white !important;
+  }
+  
+  .btn-primary:hover:not(.btn-disabled) {
+    box-shadow: 0 6px 20px rgba(14, 116, 144, 0.4);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0891b2 0%, #14b8a6 100%) !important;
+  }
+  
+  .btn-primary:active:not(.btn-disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(14, 116, 144, 0.35);
   }
 
   .btn-primary.btn-destructive {

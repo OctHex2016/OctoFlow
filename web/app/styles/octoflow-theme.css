@@ -1,0 +1,241 @@
+/* OctoFlow Custom Theme */
+/* Unique design - Ocean-inspired with distinctive styling */
+
+:root {
+  /* OctoFlow Brand Colors - Ocean Theme (WCAG AA Compliant) */
+  --octoflow-primary: #0a2540;
+  --octoflow-primary-light: #1e3a5f;
+  --octoflow-primary-lighter: #2a4a7f;
+  --octoflow-accent: #0891b2; /* Darker cyan for better contrast */
+  --octoflow-accent-light: #06b6d4;
+  --octoflow-accent-dark: #0e7490;
+  --octoflow-ocean: #0e7490;
+  --octoflow-teal: #0d9488; /* Darker teal for better contrast */
+  
+  /* Modern UI Colors */
+  --octoflow-gradient-start: #0a2540;
+  --octoflow-gradient-end: #1e40af;
+  --octoflow-glass-bg: rgba(10, 37, 64, 0.1);
+  --octoflow-glass-border: rgba(10, 37, 64, 0.2);
+  
+  /* Shadows */
+  --octoflow-shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.08);
+  --octoflow-shadow-md: 0 4px 16px rgba(10, 37, 64, 0.12);
+  --octoflow-shadow-lg: 0 8px 32px rgba(10, 37, 64, 0.16);
+  --octoflow-shadow-xl: 0 16px 48px rgba(10, 37, 64, 0.24);
+  
+  /* Border Radius */
+  --octoflow-radius-sm: 8px;
+  --octoflow-radius-md: 12px;
+  --octoflow-radius-lg: 16px;
+  --octoflow-radius-xl: 24px;
+  
+  /* Transitions */
+  --octoflow-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modern Gradient Backgrounds - Ocean Theme */
+.octoflow-gradient {
+  background: linear-gradient(135deg, var(--octoflow-ocean) 0%, var(--octoflow-teal) 100%);
+}
+
+.octoflow-gradient-text {
+  background: linear-gradient(135deg, var(--octoflow-primary) 0%, var(--octoflow-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Effect */
+.octoflow-glass {
+  background: var(--octoflow-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--octoflow-glass-border);
+  box-shadow: var(--octoflow-shadow-md);
+}
+
+/* Modern Card Style */
+.octoflow-card {
+  background: white;
+  border-radius: var(--octoflow-radius-lg);
+  box-shadow: var(--octoflow-shadow-sm);
+  border: 1px solid rgba(10, 37, 64, 0.08);
+  transition: var(--octoflow-transition);
+}
+
+.octoflow-card:hover {
+  box-shadow: var(--octoflow-shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--octoflow-accent-light);
+}
+
+/* Modern Button Styles */
+.octoflow-btn-primary {
+  background: linear-gradient(135deg, var(--octoflow-primary) 0%, var(--octoflow-primary-light) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--octoflow-radius-md);
+  padding: 12px 24px;
+  font-weight: 600;
+  box-shadow: var(--octoflow-shadow-sm);
+  transition: var(--octoflow-transition);
+  cursor: pointer;
+}
+
+.octoflow-btn-primary:hover {
+  box-shadow: var(--octoflow-shadow-md);
+  transform: translateY(-1px);
+}
+
+.octoflow-btn-primary:active {
+  transform: translateY(0);
+}
+
+.octoflow-btn-secondary {
+  background: white;
+  color: var(--octoflow-primary);
+  border: 2px solid var(--octoflow-primary);
+  border-radius: var(--octoflow-radius-md);
+  padding: 10px 22px;
+  font-weight: 600;
+  transition: var(--octoflow-transition);
+  cursor: pointer;
+}
+
+.octoflow-btn-secondary:hover {
+  background: var(--octoflow-primary);
+  color: white;
+  box-shadow: var(--octoflow-shadow-sm);
+}
+
+/* Modern Input Styles */
+.octoflow-input {
+  border: 2px solid rgba(10, 37, 64, 0.1);
+  border-radius: var(--octoflow-radius-md);
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: var(--octoflow-transition);
+  background: white;
+}
+
+.octoflow-input:focus {
+  outline: none;
+  border-color: var(--octoflow-accent);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Modern Badge */
+.octoflow-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--octoflow-radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--octoflow-primary) 0%, var(--octoflow-accent) 100%);
+  color: white;
+}
+
+/* Smooth Animations */
+@keyframes octoflow-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.octoflow-fade-in {
+  animation: octoflow-fade-in 0.5s ease-out;
+}
+
+@keyframes octoflow-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.octoflow-slide-in {
+  animation: octoflow-slide-in 0.5s ease-out;
+}
+
+/* Modern Header Style */
+.octoflow-header {
+  background: white;
+  border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+  box-shadow: var(--octoflow-shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Modern Sidebar */
+.octoflow-sidebar {
+  background: linear-gradient(180deg, var(--octoflow-primary) 0%, var(--octoflow-primary-light) 100%);
+  box-shadow: var(--octoflow-shadow-md);
+}
+
+/* Hover Effects */
+.octoflow-hover-lift {
+  transition: var(--octoflow-transition);
+}
+
+.octoflow-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--octoflow-shadow-lg);
+}
+
+/* Loading Spinner */
+.octoflow-spinner {
+  border: 3px solid rgba(10, 37, 64, 0.1);
+  border-top-color: var(--octoflow-accent);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --octoflow-glass-bg: rgba(10, 37, 64, 0.3);
+    --octoflow-glass-border: rgba(255, 255, 255, 0.1);
+  }
+  
+  .octoflow-card {
+    background: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .octoflow-header {
+    background: rgba(26, 26, 26, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .octoflow-card {
+    border-radius: var(--octoflow-radius-md);
+  }
+  
+  .octoflow-btn-primary,
+  .octoflow-btn-secondary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

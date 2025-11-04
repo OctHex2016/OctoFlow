@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useContext } from 'use-context-selector'
+import { RiEyeLine, RiEyeOffLine } from '@remixicon/react'
 import Button from '@/app/components/base/button'
 import Toast from '@/app/components/base/toast'
 import { emailRegex } from '@/config'
@@ -142,7 +143,7 @@ export default function MailAndPasswordAuth({ isInvite, isEmailSetup, allowRegis
             variant='ghost'
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? '👀' : '😝'}
+            {showPassword ? <RiEyeLine className="w-4 h-4" /> : <RiEyeOffLine className="w-4 h-4" />}
           </Button>
         </div>
       </div>

@@ -5,7 +5,6 @@ import AccountDropdown from './account-dropdown'
 import AppNav from './app-nav'
 import DatasetNav from './dataset-nav'
 import EnvNav from './env-nav'
-import PluginsNav from './plugins-nav'
 import ExploreNav from './explore-nav'
 import ToolsNav from './tools-nav'
 import { WorkspaceProvider } from '@/context/workspace-context'
@@ -62,9 +61,6 @@ const Header = () => {
             {enableBilling ? <PlanBadge allowHover sandboxAsUpgrade plan={plan.type} onClick={handlePlanClick} /> : <LicenseNav />}
           </div>
           <div className='flex items-center'>
-            <div className='mr-2'>
-              <PluginsNav />
-            </div>
             <AccountDropdown />
           </div>
         </div>
@@ -104,9 +100,6 @@ const Header = () => {
       </div>
       <div className='flex min-w-0 flex-[1] items-center justify-end pl-2 pr-3 min-[1280px]:pl-3'>
         <EnvNav />
-        <div className='mr-2'>
-          <PluginsNav />
-        </div>
         <AccountDropdown />
       </div>
     </div>
