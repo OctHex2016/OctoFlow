@@ -1,16 +1,13 @@
 /* OctoFlow Custom Theme */
-/* Unique design - Ocean-inspired with distinctive styling */
+/* Modern, professional design with dark blue branding */
 
 :root {
-  /* OctoFlow Brand Colors - Ocean Theme (WCAG AA Compliant) */
+  /* OctoFlow Brand Colors */
   --octoflow-primary: #0a2540;
-  --octoflow-primary-light: #1e3a5f;
+  --octoflow-primary-light: #1a3a5f;
   --octoflow-primary-lighter: #2a4a7f;
-  --octoflow-accent: #0891b2; /* Darker cyan for better contrast */
-  --octoflow-accent-light: #06b6d4;
-  --octoflow-accent-dark: #0e7490;
-  --octoflow-ocean: #0e7490;
-  --octoflow-teal: #0d9488; /* Darker teal for better contrast */
+  --octoflow-accent: #3b82f6;
+  --octoflow-accent-light: #60a5fa;
   
   /* Modern UI Colors */
   --octoflow-gradient-start: #0a2540;
@@ -34,9 +31,9 @@
   --octoflow-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Modern Gradient Backgrounds - Ocean Theme */
+/* Modern Gradient Backgrounds */
 .octoflow-gradient {
-  background: linear-gradient(135deg, var(--octoflow-ocean) 0%, var(--octoflow-teal) 100%);
+  background: linear-gradient(135deg, var(--octoflow-gradient-start) 0%, var(--octoflow-gradient-end) 100%);
 }
 
 .octoflow-gradient-text {
@@ -44,8 +41,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 700;
-  letter-spacing: -0.02em;
 }
 
 /* Glassmorphism Effect */

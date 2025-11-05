@@ -340,7 +340,7 @@ const AppCard = ({ app, onRefresh }: AppCardProps) => {
           e.preventDefault()
           getRedirection(isCurrentWorkspaceEditor, app, push)
         }}
-        className='group relative col-span-1 inline-flex h-[160px] cursor-pointer flex-col rounded-xl border-[1px] border-solid border-components-card-border bg-components-card-bg shadow-sm transition-all duration-200 ease-in-out hover:shadow-lg'
+        className='octoflow-card group relative col-span-1 inline-flex h-[160px] cursor-pointer flex-col rounded-xl border-[1px] border-solid border-components-card-border bg-components-card-bg shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1'
       >
         <div className='flex h-[66px] shrink-0 grow-0 items-center gap-3 px-[14px] pb-3 pt-[14px]'>
           <div className='relative shrink-0'>

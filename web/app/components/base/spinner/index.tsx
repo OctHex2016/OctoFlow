@@ -10,12 +10,7 @@ type Props = {
 const Spinner: FC<Props> = ({ loading = false, children, className }) => {
   return (
     <div
-      className={`inline-block h-4 w-4 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] ${loading ? 'motion-reduce:animate-[spin_1.5s_linear_infinite]' : 'hidden'} ${className ?? ''}`}
-      style={{
-        borderColor: 'rgba(13, 148, 136, 0.25)',
-        borderRightColor: 'transparent',
-        borderTopColor: '#0d9488',
-      }}
+      className={`inline-block h-4 w-4 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-gray-200 ${loading ? 'motion-reduce:animate-[spin_1.5s_linear_infinite]' : 'hidden'} ${className ?? ''}`}
       role="status"
     >
       <span

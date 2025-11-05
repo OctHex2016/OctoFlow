@@ -1,7 +1,7 @@
 const translation = {
-  pageTitle: '登入 OctoFlow',
-  pageTitleForE: '登入 OctoFlow',
-  welcome: '',
+  pageTitle: '嗨，近來可好',
+  pageTitleForE: '嗨，近來可好',
+  welcome: '👋 歡迎來到 OctoFlow, 登入以繼續',
   email: '郵箱',
   emailPlaceholder: '輸入郵箱地址',
   password: '密碼',
@@ -119,7 +119,7 @@ const translation = {
     verifyMail: '繼續驗證碼',
     createAccount: '創建您的帳戶',
     haveAccount: '已經有帳戶了嗎？',
-    welcome: '',
+    welcome: '👋 歡迎！請填寫詳細信息以開始。',
   },
 }
 
