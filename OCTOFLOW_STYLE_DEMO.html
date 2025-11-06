@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OctoFlow Style Demo</title>
+    <style>
+        /* OctoFlow Custom Theme - Copy from octoflow-theme.css */
+        :root {
+            --octoflow-primary: #0a2540;
+            --octoflow-primary-light: #1a3a5f;
+            --octoflow-accent: #3b82f6;
+            --octoflow-accent-light: #60a5fa;
+            --octoflow-shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.08);
+            --octoflow-shadow-md: 0 4px 16px rgba(10, 37, 64, 0.12);
+            --octoflow-radius-md: 12px;
+            --octoflow-radius-lg: 16px;
+            --octoflow-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 40px;
+            background: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, var(--octoflow-primary) 0%, var(--octoflow-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .octoflow-card {
+            background: white;
+            border-radius: var(--octoflow-radius-lg);
+            box-shadow: var(--octoflow-shadow-sm);
+            border: 1px solid rgba(10, 37, 64, 0.08);
+            padding: 24px;
+            transition: var(--octoflow-transition);
+        }
+
+        .octoflow-card:hover {
+            box-shadow: var(--octoflow-shadow-md);
+            transform: translateY(-2px);
+            border-color: var(--octoflow-accent-light);
+        }
+
+        .octoflow-btn-primary {
+            background: linear-gradient(135deg, var(--octoflow-primary) 0%, var(--octoflow-primary-light) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--octoflow-radius-md);
+            padding: 12px 24px;
+            font-weight: 600;
+            box-shadow: var(--octoflow-shadow-sm);
+            transition: var(--octoflow-transition);
+            cursor: pointer;
+            margin-right: 12px;
+        }
+
+        .octoflow-btn-primary:hover {
+            box-shadow: var(--octoflow-shadow-md);
+            transform: translateY(-1px);
+        }
+
+        .octoflow-btn-secondary {
+            background: white;
+            color: var(--octoflow-primary);
+            border: 2px solid var(--octoflow-primary);
+            border-radius: var(--octoflow-radius-md);
+            padding: 10px 22px;
+            font-weight: 600;
+            transition: var(--octoflow-transition);
+            cursor: pointer;
+        }
+
+        .octoflow-btn-secondary:hover {
+            background: var(--octoflow-primary);
+            color: white;
+            box-shadow: var(--octoflow-shadow-sm);
+        }
+
+        .octoflow-input {
+            border: 2px solid rgba(10, 37, 64, 0.1);
+            border-radius: var(--octoflow-radius-md);
+            padding: 12px 16px;
+            font-size: 14px;
+            transition: var(--octoflow-transition);
+            background: white;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .octoflow-input:focus {
+            outline: none;
+            border-color: var(--octoflow-accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .octoflow-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--octoflow-primary) 0%, var(--octoflow-accent) 100%);
+            color: white;
+            margin-left: 8px;
+        }
+
+        .demo-section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--octoflow-primary);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐙 OctoFlow Modern UI Demo</h1>
+
+        <div class="demo-section">
+            <h2>Modern Cards</h2>
+            <div class="grid">
+                <div class="octoflow-card">
+                    <h3>AI Assistant <span class="octoflow-badge">Enterprise</span></h3>
+                    <p>Build powerful AI applications with OctoFlow's intuitive interface.</p>
+                    <button class="octoflow-btn-primary">Open</button>
+                    <button class="octoflow-btn-secondary">Settings</button>
+                </div>
+                <div class="octoflow-card">
+                    <h3>Knowledge Base <span class="octoflow-badge">Pro</span></h3>
+                    <p>Manage your datasets and train your AI models efficiently.</p>
+                    <button class="octoflow-btn-primary">View</button>
+                    <button class="octoflow-btn-secondary">Edit</button>
+                </div>
+                <div class="octoflow-card">
+                    <h3>Workflows <span class="octoflow-badge">New</span></h3>
+                    <p>Create complex AI workflows with drag-and-drop simplicity.</p>
+                    <button class="octoflow-btn-primary">Create</button>
+                    <button class="octoflow-btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Modern Form Elements</h2>
+            <div class="octoflow-card" style="max-width: 600px;">
+                <input type="text" class="octoflow-input" placeholder="Enter your app name...">
+                <input type="email" class="octoflow-input" placeholder="Enter your email...">
+                <button class="octoflow-btn-primary">Submit</button>
+                <button class="octoflow-btn-secondary">Cancel</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Badges & Tags</h2>
+            <div class="octoflow-card">
+                <span class="octoflow-badge">Enterprise</span>
+                <span class="octoflow-badge">Pro</span>
+                <span class="octoflow-badge">New</span>
+                <span class="octoflow-badge">Beta</span>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>How to Apply These Styles</h2>
+            <div class="octoflow-card">
+                <p><strong>The OctoFlow theme is already loaded in your app!</strong></p>
+                <p>To see these styles in your actual OctoFlow application, you need to add the CSS classes to your components:</p>
+                <ul style="line-height: 1.8;">
+                    <li>Add <code>octoflow-card</code> to card elements</li>
+                    <li>Add <code>octoflow-btn-primary</code> to primary buttons</li>
+                    <li>Add <code>octoflow-btn-secondary</code> to secondary buttons</li>
+                    <li>Add <code>octoflow-input</code> to input fields</li>
+                    <li>Add <code>octoflow-badge</code> to badges/tags</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong>The theme CSS is in:</strong> <code>/web/app/styles/octoflow-theme.css</code></p>
+                <p><strong>Full guide:</strong> <code>OCTOFLOW_UI_REDESIGN.md</code></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
