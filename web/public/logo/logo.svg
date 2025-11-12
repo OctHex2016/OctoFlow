@@ -1,12 +1,45 @@
-<svg width="48" height="22" viewBox="0 0 48 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="White=False">
-<g id="if">
-<path d="M21.2002 3.73454C22.5633 3.73454 23.0666 2.89917 23.0666 1.86812C23.0666 0.837081 22.5623 0.00170898 21.2002 0.00170898C19.838 0.00170898 19.3337 0.837081 19.3337 1.86812C19.3337 2.89917 19.838 3.73454 21.2002 3.73454Z" fill="#0033FF"/>
-<path d="M27.7336 4.13435V5.33473H24.6668V8.00171H27.7336V14.6687H22.6668V5.33567H15.9998V8.00265H19.7336V14.6696H15.3337V17.3366H35.3337V14.6696H30.6668V8.00265H35.3337V5.33567H30.6668V2.66869H35.3337V0.00170898H31.8671C29.5877 0.00170898 27.7336 1.8559 27.7336 4.13529V4.13435Z" fill="#0033FF"/>
-</g>
-<g id="Dy">
-<path d="M5.66698 0.000940576H0V17.334H5.66698C12.667 17.334 14.667 13.334 14.667 8.66698C14.667 4 12.667 0 5.66698 0V0.000940576ZM5.73377 14.6679H3.20038V2.66792H5.73377C9.75823 2.66792 11.4666 4.64346 11.4666 8.66792C11.4666 12.6924 9.75823 14.6679 5.73377 14.6679Z" fill="black"/>
-<path d="M44.8335 5.3349L42.1665 14.0019L39.4995 5.3349H36.333L40.2013 16.5466C40.604 17.714 39.9229 18.6679 38.6886 18.6679H37.333V21.3349H39.3255C41.063 21.3349 42.6265 20.2361 43.2145 18.6011L48 5.3349H44.8335Z" fill="black"/>
-</g>
-</g>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Octopus head/body -->
+  <ellipse cx="50" cy="35" rx="20" ry="15" fill="#ff6b6b" stroke="#333" stroke-width="2"/>
+  
+  <!-- Eyes -->
+  <circle cx="44" cy="30" r="3" fill="#333"/>
+  <circle cx="56" cy="30" r="3" fill="#333"/>
+  <circle cx="44.5" cy="29" r="1" fill="white"/> 
+  <circle cx="56.5" cy="29" r="1" fill="white"/>
+  
+  <!-- Tentacles -->
+  <!-- Tentacle 1 (top left) -->
+  <path d="M35 45 Q25 55 30 65 Q35 75 25 80" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 2 (left) -->
+  <path d="M32 48 Q15 58 20 70 Q25 82 15 85" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 3 (bottom left) -->
+  <path d="M40 50 Q30 65 35 80 Q40 90 30 95" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 4 (bottom center left) -->
+  <path d="M45 50 Q40 70 45 85 Q50 95 45 100" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 5 (bottom center right) -->
+  <path d="M55 50 Q60 70 55 85 Q50 95 55 100" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 6 (bottom right) -->
+  <path d="M60 50 Q70 65 65 80 Q60 90 70 95" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 7 (right) -->
+  <path d="M68 48 Q85 58 80 70 Q75 82 85 85" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 8 (top right) -->
+  <path d="M65 45 Q75 55 70 65 Q65 75 75 80" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Suction cups on tentacles -->
+  <circle cx="28" cy="60" r="2" fill="#ff8e8e"/>
+  <circle cx="18" cy="72" r="2" fill="#ff8e8e"/>
+  <circle cx="33" cy="75" r="2" fill="#ff8e8e"/>
+  <circle cx="43" cy="78" r="2" fill="#ff8e8e"/>
+  <circle cx="57" cy="78" r="2" fill="#ff8e8e"/>
+  <circle cx="67" cy="75" r="2" fill="#ff8e8e"/>
+  <circle cx="82" cy="72" r="2" fill="#ff8e8e"/>
+  <circle cx="72" cy="60" r="2" fill="#ff8e8e"/>
 </svg>
